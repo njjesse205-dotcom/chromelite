@@ -1,0 +1,291 @@
+
+/* =====================================
+   CHROMELITE TECHNOLOGIES LIMITED
+   COMPANY PROFILE STYLESHEET
+===================================== */
+
+/* 1. CSS CUSTOM PROPERTIES */
+:root {
+    --primary-colour: #142B4A;
+    --secondary-colour: #F28C28;
+    --accent-colour: #2E638A;
+
+    --white: #FFFFFF;
+    --light-grey: #F4F6F8;
+    --dark-grey: #333333;
+    --border-colour: #DDDDDD;
+}
+
+/* 2. GENERAL STYLING */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--light-grey);
+    color: var(--dark-grey);
+    line-height: 1.7;
+}
+
+/* 3. NAVIGATION BAR */
+.navbar {
+    background-color: var(--primary-colour);
+    color: var(--white);
+    padding: 20px 5%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: var(--secondary-colour);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease,
+                background-color 0.3s ease;
+    padding: 8px 10px;
+    border-radius: 4px;
+}
+
+.nav-links a:hover {
+    color: var(--secondary-colour);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* 4. MAIN FLEXBOX LAYOUT */
+.layout {
+    display: flex;
+    gap: 5%;
+    align-items: flex-start;
+
+    width: 90%;
+    margin: 30px auto;
+}
+
+/* 5. SIDEBAR */
+.sidebar {
+    width: 25%;
+    background-color: var(--white);
+    padding: 25px;
+    border-radius: 8px;
+    border-top: 4px solid var(--secondary-colour);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.sidebar h3 {
+    color: var(--primary-colour);
+    margin-bottom: 18px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin-bottom: 12px;
+    border-bottom: 1px solid var(--border-colour);
+    padding-bottom: 10px;
+}
+
+.sidebar a {
+    color: var(--accent-colour);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.sidebar a:hover {
+    color: var(--secondary-colour);
+}
+
+.sidebar-note {
+    margin-top: 30px;
+    padding: 15px;
+    background-color: var(--light-grey);
+    border-left: 4px solid var(--secondary-colour);
+}
+
+.sidebar-note h4 {
+    color: var(--primary-colour);
+    margin-bottom: 8px;
+}
+
+/* 6. MAIN CONTENT */
+.main-content {
+    width: 70%;
+}
+
+.content-section {
+    background-color: var(--white);
+    padding: 30px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    scroll-margin-top: 20px;
+}
+
+.content-section h2 {
+    color: var(--primary-colour);
+    font-size: 25px;
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--secondary-colour);
+}
+
+.content-section p {
+    margin-bottom: 15px;
+}
+
+/* 7. SERVICES CARDS */
+.services-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-top: 25px;
+}
+
+.service-card {
+    flex: 1 1 45%;
+    min-width: 0;
+    background-color: var(--light-grey);
+    padding: 22px;
+    border-radius: 7px;
+    border-bottom: 4px solid var(--secondary-colour);
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+}
+
+.service-card h3 {
+    color: var(--primary-colour);
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    margin-bottom: 0;
+}
+
+/* 8. CONTACT DETAILS */
+.contact-details {
+    background-color: var(--light-grey);
+    padding: 20px;
+    border-radius: 6px;
+    margin-top: 20px;
+}
+
+.contact-details p {
+    margin-bottom: 10px;
+}
+
+.contact-details a {
+    color: var(--accent-colour);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.contact-details a:hover {
+    color: var(--secondary-colour);
+    text-decoration: underline;
+}
+
+/* 9. FOOTER */
+.footer {
+    background-color: var(--primary-colour);
+    color: var(--white);
+    text-align: center;
+    padding: 22px;
+    width: 100%;
+}
+
+.footer p {
+    margin: 0;
+}
+
+/* 10. RESPONSIVE DESIGN */
+@media screen and (max-width: 768px) {
+
+    /* Stack sidebar and main content vertically */
+    .layout {
+        flex-direction: column;
+        gap: 20px;
+        width: 92%;
+    }
+
+    /* Main content appears before sidebar */
+    .main-content {
+        width: 100%;
+        order: 1;
+    }
+
+    .sidebar {
+        width: 100%;
+        order: 2;
+    }
+
+    /* Navigation becomes vertical */
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .content-section {
+        padding: 22px;
+    }
+
+    .service-card {
+        flex: 1 1 100%;
+    }
+}
+
+/* SMALL MOBILE SCREENS */
+@media screen and (max-width: 480px) {
+
+    .logo {
+        font-size: 19px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .content-section h2 {
+        font-size: 21px;
+    }
+
+    .content-section {
+        padding: 18px;
+    }
+}
